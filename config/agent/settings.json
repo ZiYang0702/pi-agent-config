@@ -1,0 +1,21 @@
+{
+  "lastChangelogVersion": "1.4.0",
+  "transport": "sse",
+  "defaultProvider": "openai-codex",
+  "defaultModel": "gpt-6-astra",
+  "defaultThinkingLevel": "low",
+  "enabledModels": [
+    "openai-codex/gpt-6-astra",
+    "openai-codex/gpt-6.1-terra",
+    "deepseek/deepseek-flash",
+    "volcengine-plan/deepseek-v4.1-flash"
+  ],
+  "packages": [
+    "npm:@tintinweb/pi-subagents@0.22.0",
+    "npm:pi-token-speed@0.12.0"
+  ],
+  "modelThinkingLevels": {
+    "deepseek/deepseek-flash": "max",
+    "volcengine-plan/deepseek-v4.1-flash": "max"
+  }
+}

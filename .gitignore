@@ -1,0 +1,17 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+node_modules/
+.env
+.env.*
+!.env.example
+auth.json
+models-store.json
+trust.json
+sessions/
+backups/
+browser-profile/
+browser-output/
+*.log
+*.pem
+*.key

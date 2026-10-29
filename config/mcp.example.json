@@ -1,0 +1,59 @@
+{
+  "mcpServers": {
+    "peekaboo": {
+      "command": "peekaboo",
+      "args": [
+        "mcp",
+        "serve",
+        "--transport",
+        "stdio"
+      ],
+      "description": "Control local macOS desktop apps with Peekaboo: inspect windows, capture screenshots, click, type, scroll and use menus. Observe the exact target with see before input and use fresh snapshot references. If an action reports dispatched_unverified, observe its effect before deciding whether to retry; never blindly repeat input. Screenshots may contain private information; target only the app needed for the user's task.",
+      "timeout": 60,
+      "exposure": "hidden",
+      "toolExposure": {
+        "permissions": "direct",
+        "see": "direct",
+        "image": "deferred",
+        "inspect_ui": "deferred",
+        "app": "deferred",
+        "window": "deferred",
+        "click": "deferred",
+        "type": "deferred",
+        "press": "deferred",
+        "scroll": "deferred",
+        "drag": "deferred",
+        "set_value": "deferred",
+        "select_text": "deferred",
+        "action": "deferred",
+        "menu": "deferred",
+        "dialog": "deferred",
+        "verify_state": "deferred"
+      },
+      "enabled": false
+    },
+    "browser": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@playwright/mcp@0.0.83",
+        "--browser",
+        "chrome",
+        "--user-data-dir",
+        "~/.pi/browser-profile",
+        "--viewport-size",
+        "1600x1000",
+        "--timeout-action",
+        "15000",
+        "--timeout-navigation",
+        "90000",
+        "--output-dir",
+        "~/.pi/browser-output"
+      ],
+      "description": "Drive a real Chrome window with DOM-level control: open URLs, read page structure as an accessibility snapshot, click/type/hover/select, fill forms, upload files, run JS, read console and network, take screenshots. Use for logged-in web consoles (with user approval); the Chrome profile at ~/.pi/browser-profile keeps sign-ins between sessions.",
+      "timeout": 120,
+      "exposure": "deferred",
+      "enabled": false
+    }
+  }
+}

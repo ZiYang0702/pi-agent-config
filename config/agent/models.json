@@ -1,0 +1,40 @@
+{
+  "providers": {
+    "volcengine-plan": {
+      "baseUrl": "https://ark.cn-beijing.volces.com/api/plan/v3",
+      "api": "openai-completions",
+      "models": [
+        {
+          "id": "deepseek-v4.1-flash",
+          "name": "DeepSeek V4.1 Flash (火山方舟订阅)",
+          "contextWindow": 272000,
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "minimal": null,
+            "low": "low",
+            "medium": null,
+            "high": "high",
+            "xhigh": null,
+            "max": "max"
+          },
+          "compat": {
+            "thinkingFormat": "deepseek",
+            "supportsReasoningEffort": true,
+            "requiresReasoningContentOnAssistantMessages": true
+          }
+        }
+      ],
+      "apiKey": "${VOLCENGINE_PLAN_API_KEY}"
+    },
+    "deepseek": {
+      "modelOverrides": {
+        "deepseek-flash": {
+          "contextWindow": 272000,
+          "maxTokens": 16384,
+          "name": "DeepSeek V4.1 Flash (API)"
+        }
+      },
+      "apiKey": "${DEEPSEEK_API_KEY}"
+    }
+  }
+}

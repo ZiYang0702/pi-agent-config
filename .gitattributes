@@ -1,0 +1,4 @@
+# Preserved upstream skill sources and locally adapted Pi example.
+# Attribution and licenses: third-party/NOTICES.md.
+skills/skill-creator/** linguist-vendored=true
+config/agent/extensions/subagent/** linguist-vendored=true

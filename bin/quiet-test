@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Retain full output outside the checkout, preserving the command's exit status.
+set -u
+logs=${QUIET_TEST_LOG_DIR:-/tmp/quiet-test-logs}
+mkdir -p "$logs"
+log=$(mktemp "$logs/run.XXXXXX")
+printf 'Command:' > "$log"; printf ' %q' "$@" >> "$log"; printf '\n' >> "$log"
+"$@" >> "$log" 2>&1
+status=$?
+printf 'exit=%s log=%s\n' "$status" "$log"
+if [ "$status" -ne 0 ]; then tail -n 18 "$log"; fi
+exit "$status"
